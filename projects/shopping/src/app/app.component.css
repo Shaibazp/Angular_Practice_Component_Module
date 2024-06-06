@@ -1,0 +1,16 @@
+.container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+h1
+{
+    padding: 20px;
+    border: 1px solid gray;
+    box-shadow: 2px 2px 3px black;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 20px;
+    background-color: yellow;
+}

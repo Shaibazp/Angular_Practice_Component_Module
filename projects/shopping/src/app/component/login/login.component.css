@@ -1,0 +1,14 @@
+.login-form
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+}
+form
+{
+    border: 1px solid gray;
+    box-shadow: 2px 2 px 3px gray;
+    padding: 20px;
+    border-radius: 20px;
+}

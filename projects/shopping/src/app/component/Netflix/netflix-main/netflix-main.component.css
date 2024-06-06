@@ -1,0 +1,14 @@
+.main
+{
+    color: white;
+    text-align: center;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+h1
+{
+    font-size: 50px;
+    width: 650px;
+}

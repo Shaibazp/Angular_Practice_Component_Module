@@ -1,0 +1,11 @@
+.background
+{
+    background-image: url("/assets/imgs.png");
+    height: 700px;
+    background-size: cover;
+}
+.shade
+{
+    background-color: rgba(0, 0, 0,0.6);
+    height: 700px;
+}
