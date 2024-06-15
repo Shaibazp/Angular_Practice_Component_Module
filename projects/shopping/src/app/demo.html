@@ -1,2 +1,27 @@
-Departure :
-<input type="date">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function bodyload()
+        {
+            var lists = ["www","qqq","eee"];
+            for(var itm of lists)
+            {
+                var options = document.createElement("option");
+                options.text = itm;
+                options.value = itm;
+                document.querySelector("select").appendChild(options);
+            }
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <h3>Elemtnt</h3>
+    <select>
+
+    </select>
+</body>
+</html>

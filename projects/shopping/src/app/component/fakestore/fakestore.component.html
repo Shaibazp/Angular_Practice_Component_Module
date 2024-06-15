@@ -1,0 +1,44 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h2>Product Details</h2>
+            <div class="form-switch">
+                <input type="checkbox" ngModel #Descriptions="ngModel" class="form-check-input"> View Description
+            </div>
+            <dl>
+                <dt>Title</dt>
+                <dd>{{Product.title}}</dd>
+                <dt>Price</dt>
+                <dd>{{Product.price}}</dd>
+                <dt>Preview</dt>
+                <dd><img [src]="Product.image" width="200" height="200"></dd>
+                <dt>Rating</dt>
+                <dd><span class="bi bi-star-fill text-success"></span>{{Product.rating.rate}} [{{Product.rating.count}}]
+                </dd>
+
+            </dl>
+            <button class="btn btn-success me-2" (click)="previousClick()">
+                <span class="bi bi-chevron-bar-left"></span>
+            </button>
+            <button class="btn btn-success" (click)="nextClick()">
+                <span class="bi bi-chevron-bar-right"></span>
+            </button>
+        </div>
+        <div class="col">
+            <div *ngIf="Descriptions.value; then desc else descalter"></div>
+            <div class="description">
+                <ng-template #desc>
+                    <textarea *ngIf="Descriptions.value" rows="4" cols="40" disabled>
+                {{Product.description}}
+            </textarea>
+                </ng-template>
+                <ng-template #descalter>
+                    <div style="width: 200px; padding: 20px; height: 200; border: 1px dotted gray;">
+                        No Description
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+
+</div>

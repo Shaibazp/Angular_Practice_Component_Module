@@ -1,0 +1,49 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            <div class="btn-group-vertical">
+                <button (click)="viewChanges('BasicDetails')" class="btn btn-primary w-100 mb-2 mt-5">Basic Details</button>
+                <button (click)="viewChanges('Preview')" class="btn btn-primary w-100 mb-2 ">Preview</button>
+                <button (click)="viewChanges('Offers')" class="btn btn-primary w-100 mb-2">Offers</button>
+            </div>
+            <div class="mt-4">
+                <select [(ngModel)]="viewName" class="form-select" >
+                    <option value="Info">Info</option>
+                    <option value="BasicDetails">Basic Details</option>
+                    <option value="Preview">Preview</option>
+                    <option value="Offers">Offers</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-10">
+            <div [ngSwitch]="viewName">
+
+                <div *ngSwitchCase="'BasicDetails'">
+                    <h4>Apple iPhone 15 Pro Max (Black Titanium, 256 GB)</h4>
+                    <span class="bg-success text-white p-2 rounded rounded-2"><span class="bi bi-star-fill text-white"></span> 4.3 </span><span class="ms-4" style="color: gray;"> 636 Ratings & 55 Reviews </span>
+                    <div>
+                        <h2>₹1,48,900</h2>
+                    </div>
+                </div>
+
+                <div *ngSwitchCase="'Preview'">
+                    <img src="assets/view1.webp" width="300" height="400">
+                </div>
+
+                <div *ngSwitchCase="'Offers'">
+                    <h4> Available offers </h4>
+                    <ul class="list-unstyled">
+                        <li class="bi bi-tag-fill text-success">Bank OfferGet ₹50 instant discount on first Flipkart UPI transaction on order of ₹200 and above</li>
+                        <li class="bi bi-tag-fill text-success">Bank Offer5% Cashback on Flipkart Axis Bank Card</li>
+                        <li class="bi bi-tag-fill text-success">Bank Offer₹1000 off on UPI Transactions</li>
+                        <li class="bi bi-tag-fill text-success">Special PriceGet extra ₹11000 off (price inclusive of cashback/coupon)</li>
+                    </ul>
+                </div>
+
+                <div *ngSwitchDefault>
+                    <h4>Please Select a view</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

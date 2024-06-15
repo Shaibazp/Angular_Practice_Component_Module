@@ -1,0 +1,20 @@
+nav div
+{
+    border: 2px solid blue;
+    margin-bottom:  20px;
+    padding: 5px;
+    width: 65px;
+    height: 65px;
+}
+nav
+{
+    /* height: 400px; */
+    border: 1px solid black;
+    width: 75px;
+    padding: 10px;
+    overflow: auto;
+}
+nav div:hover
+{
+    cursor: grab;
+}

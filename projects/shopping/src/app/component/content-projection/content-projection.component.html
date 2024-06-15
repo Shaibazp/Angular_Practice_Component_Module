@@ -1,0 +1,21 @@
+<div>
+    <h2>Content Projection</h2>
+    <div>
+        <select (change)="TemplateChange()" [(ngModel)]="TemplateNames">
+            <option>Choose Template</option>
+            <option value="Temp1">Template1</option>
+            <option value="Temp2">Template2</option>
+            <option value="Temp3">Template3</option>
+        </select>
+    </div>
+    <div *ngIf="true;then ThenBlock"></div>
+    <ng-template #Temp1>
+        tEMPLATE-1    
+    </ng-template>
+    <ng-template #Temp2>
+        tEMPLATE-2    
+    </ng-template>
+    <ng-template #Temp3>
+        tEMPLATE-3  
+    </ng-template>
+</div>
