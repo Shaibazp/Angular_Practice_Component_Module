@@ -16,6 +16,7 @@ import { MobilesDetailsComponent } from './component/mobiles-details/mobiles-det
 import { NgSwitchProductComponent } from './component/ng-switch-product/ng-switch-product.component';
 import { NgForDemoComponent } from './component/ng-for-demo/ng-for-demo.component';
 import { NgForPropertiesComponent } from './component/ng-for-properties/ng-for-properties.component';
+import { NgForTrackbyComponent } from './component/ng-for-trackby/ng-for-trackby.component';
 
 @NgModule({
   declarations: [
@@ -32,13 +33,14 @@ import { NgForPropertiesComponent } from './component/ng-for-properties/ng-for-p
     MobilesDetailsComponent,
     NgSwitchProductComponent,
     NgForDemoComponent,
-    NgForPropertiesComponent
+    NgForPropertiesComponent,
+    NgForTrackbyComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
   providers: [],
-  bootstrap: [NgForPropertiesComponent]
+  bootstrap: [NgForTrackbyComponent]
 })
 export class AppModule { }

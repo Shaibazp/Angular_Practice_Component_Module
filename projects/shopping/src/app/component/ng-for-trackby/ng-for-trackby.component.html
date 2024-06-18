@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <div class="mt-4">
+        <div class="mb-2">
+            <button (click)="updateClick()">Update</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let items of productss; trackBy:trackChanges">
+                    <td>{{items.Names}}</td>
+                    <td>{{items.Prices}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
