@@ -12,7 +12,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let items of productss; trackBy:trackChanges">
-                    <td>{{items.Names}}</td>
+                    <td>{{items.Name}}</td>
                     <td>{{items.Prices}}</td>
                 </tr>
             </tbody>
@@ -32,7 +32,7 @@
                 <tr *ngFor="let itm of marcObject.photos">
                     <td>{{itm.id}}</td>
                     <td><img [src]="itm.img_src" width="50px" height="50px"></td>
-                    <td>{{itm.camera.name}}</td>
+                    <td>{{itm.camera.full_name}}</td>
                     <td>{{itm.rover.name}}</td>
                 </tr>
             </tbody>
@@ -47,7 +47,7 @@
             <div class="card-body">
                 <dl>
                     <dt>Camera Name</dt>
-                    <dd>{{itm.camera.name}}</dd>
+                    <dd>{{itm.camera.full_name}}</dd>
                     <dt>Rover Name</dt>
                     <dd>{{itm.rover.name}}</dd>
                 </dl>
