@@ -9,7 +9,7 @@ import { FakestoreProductContract } from '../../contracts/FakestoreProductContra
 export class NgForTrackbyComponent implements OnInit
 {
 
-
+  public marcObject:any = {};
   public productss:any[] =[
     {Names: "TV", Prices:25400},
     {Names: "TV", Prices:25400}
@@ -19,6 +19,9 @@ export class NgForTrackbyComponent implements OnInit
   ngOnInit(): void 
   {
     this.GetData();
+    fetch("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&api_key=DEMO_KEY")
+    .then(resp => resp.json())
+    .then( resp =>{this.marcObject = resp});
   }
   public GetData():void
   {
