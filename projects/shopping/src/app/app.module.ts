@@ -17,6 +17,7 @@ import { NgSwitchProductComponent } from './component/ng-switch-product/ng-switc
 import { NgForDemoComponent } from './component/ng-for-demo/ng-for-demo.component';
 import { NgForPropertiesComponent } from './component/ng-for-properties/ng-for-properties.component';
 import { NgForTrackbyComponent } from './component/ng-for-trackby/ng-for-trackby.component';
+import { ShopperTemplateComponent } from './component/shopper-template/shopper-template.component';
 
 @NgModule({
   declarations: [
@@ -34,13 +35,14 @@ import { NgForTrackbyComponent } from './component/ng-for-trackby/ng-for-trackby
     NgSwitchProductComponent,
     NgForDemoComponent,
     NgForPropertiesComponent,
-    NgForTrackbyComponent
+    NgForTrackbyComponent,
+    ShopperTemplateComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
   providers: [],
-  bootstrap: [NgForTrackbyComponent]
+  bootstrap: [ShopperTemplateComponent]
 })
 export class AppModule { }

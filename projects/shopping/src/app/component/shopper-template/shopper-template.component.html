@@ -1,0 +1,72 @@
+<div class="container-fluid">
+    <header class="d-flex p-2 justify-content-between">
+        <div><h2>Shopper.</h2></div>
+        <nav>
+            <button (click)="categoryChange('all')" class="btn">Home</button>
+            <button (click)="categoryChange('electronics')" class="btn">Electronics</button>
+            <button class="btn">Men's Fashion</button>
+            <button class="btn">Women's Fashion</button>
+            <button (click)="categoryChange('jewelery')" class="btn">Jewelery</button>
+        </nav>
+        <div>
+            <button class="btn"><span class="bt bi-search"></span></button>
+            <button class="btn"><span class="bt bi-heart"></span></button>
+            <button class="btn"><span class="bt bi-person"></span></button>
+            <button (click)="changevisible()" class="btn position-relative"><span class="bt bi-cart2"></span><span class="badge rounded rounded-circle bg-danger text-white position-absolute">{{cartItemsCount}}</span></button>
+        </div>
+    </header>
+    <div class="bg-dark text-white text-center p-2 mt-2">
+        HAPPY HOLIDAY DEALS ON EVERYTHING
+    </div>
+    <section class="mt-3 row">
+        <nav class="col-3">
+            <div>
+                <label class="form-label">Select Category</label>
+                <div>
+                    <select (change)="categoryChange(category.value)" ngModel #category="ngModel" class="form-select">
+                        <option *ngFor="let item of categories" [value]="item" >{{item | uppercase}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="mt-2" *ngIf="cartVisible">
+                <h4>Your Cart</h4>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Preview</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let itm of CartItems;let i=index;">
+                            <td>{{itm.title}}</td>
+                            <td><img [src]="itm.image" width="50" height="50"></td>
+                            <td><button (click)="deleteFromcart(i)" class="btn btn-danger bi bi-trash-fill"></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </nav>
+        <main class="col-9 d-flex flex-wrap overflow-auto" style="height: 550px;">
+            <div *ngFor="let prod of Products" class="card p-2 m-2"   style="width: 200px;">
+                <img [src]="prod.image" class="card-img-top" height="140px">
+                <div class="card-header" style="height: 160px;">
+                    <p>{{prod.title}}</p>
+                </div>
+                <div class="card-body">
+                    <dt>Price</dt>
+                    <dd>{{prod.price}}</dd>
+                    <dt>Rating</dt>
+                    <dd><span class="bi bi-star-fill text-success"></span>
+                        {{prod.rating.rate}} [{{prod.rating.count}}]</dd>
+                </div>
+                <div class="card-footer">
+                    <button (click)="addItems(prod.id)" class="btn btn-danger w-100">
+                        <span class="bi bi-cart4">Add to Cart</span>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </section>
+</div>
