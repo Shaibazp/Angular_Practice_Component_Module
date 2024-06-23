@@ -1,0 +1,16 @@
+.bg-style
+{
+    background-color: red;
+}
+.text-style
+{
+    color: white;
+}
+.border-style
+{
+    border: 1px solid green;  
+}
+.bg-dangers
+{
+    background-color: red; 
+}

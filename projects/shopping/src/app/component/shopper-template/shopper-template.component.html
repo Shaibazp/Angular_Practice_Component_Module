@@ -43,6 +43,11 @@
                             <td>{{itm.title}}</td>
                             <td><img [src]="itm.image" width="50" height="50"></td>
                             <td><button (click)="deleteFromcart(i)" class="btn btn-danger bi bi-trash-fill"></button></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>Total</td>
+                            <td>{{totals}}</td>
                         </tr>
                     </tbody>
                 </table>

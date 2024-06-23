@@ -18,6 +18,7 @@ import { NgForDemoComponent } from './component/ng-for-demo/ng-for-demo.componen
 import { NgForPropertiesComponent } from './component/ng-for-properties/ng-for-properties.component';
 import { NgForTrackbyComponent } from './component/ng-for-trackby/ng-for-trackby.component';
 import { ShopperTemplateComponent } from './component/shopper-template/shopper-template.component';
+import { ClassBindingComponent } from './component/class-binding/class-binding.component';
 
 @NgModule({
   declarations: [
@@ -36,13 +37,14 @@ import { ShopperTemplateComponent } from './component/shopper-template/shopper-t
     NgForDemoComponent,
     NgForPropertiesComponent,
     NgForTrackbyComponent,
-    ShopperTemplateComponent
+    ShopperTemplateComponent,
+    ClassBindingComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
   providers: [],
-  bootstrap: [ShopperTemplateComponent]
+  bootstrap: [ClassBindingComponent]
 })
 export class AppModule { }

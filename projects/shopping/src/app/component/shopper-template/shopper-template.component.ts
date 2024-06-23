@@ -13,6 +13,7 @@ export class ShopperTemplateComponent implements OnInit
   public CartItems:FakestoreProductContract[] = [];
   public cartItemsCount:number = 0;
   public cartVisible:boolean = false;
+  public totals:number = 0;
   constructor(){}
   ngOnInit(): void 
   {
@@ -55,12 +56,18 @@ export class ShopperTemplateComponent implements OnInit
     .then(resp => resp.json())
     .then(resp =>{
       this.CartItems.push(resp);
+      
       this.getCardItemCount();
     })
   }
   public getCardItemCount():void
   {
       this.cartItemsCount = this.CartItems.length;
+      for(let itm of this.CartItems)
+        {
+          this.totals = this.totals +  itm.price;
+        }
+      
   }
 
   public changevisible():void
