@@ -1,0 +1,35 @@
+<div class="container-fluid" (mouseover)="mouseOverChange($event)">
+    <div>
+        <h2>Event Binding</h2>
+    <button (click)="InserClick($event, 'Recorded')" id="btnInsert" name="InsertButton" class="btn btn-primary">Click</button>
+    </div>
+    <div>
+        <h2>Shoe</h2>
+        <img [src]="img_src" width="200" height="200">
+    </div>
+    <div class="mt-2">
+        <div class="btn-group">
+            <button (mouseover)="setColor('black')" style="background-color: black; color: white;">Black</button>
+            <button (mouseover)="setColor('green')" style="background-color: green; color: white;">Green</button>
+        </div>
+    </div>
+    <div>
+        <div>
+            <img [ngStyle]="styleObject" src="assets/flag.gif" width="50" height="50">
+        </div>
+    </div>
+    <div>
+        <h2>Register User</h2>
+        <dl>
+            <dt>User Name</dt>
+            <dd><input (blur)="verifyRequired($event)" (keyup)="verifyUser($event)" type="text"></dd>
+            <dd [ngStyle]="StyleObject">{{userError}}</dd>
+            <dt>Password</dt>
+            <dd><input type="password" (focus)="passwordFocus()" (blur)="paswordBlue()" (keypress)="verifyPassword($event)"></dd>
+            <dd class="text-warning" *ngIf="isPwdErrorVisible">
+                <span class="bi bi-exclamation-triangle-fill">Caps ON</span>
+            </dd>
+            <dd>{{pwdError}}</dd>
+        </dl>
+    </div>
+</div>

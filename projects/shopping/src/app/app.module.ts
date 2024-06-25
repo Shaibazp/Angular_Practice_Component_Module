@@ -19,6 +19,7 @@ import { NgForPropertiesComponent } from './component/ng-for-properties/ng-for-p
 import { NgForTrackbyComponent } from './component/ng-for-trackby/ng-for-trackby.component';
 import { ShopperTemplateComponent } from './component/shopper-template/shopper-template.component';
 import { ClassBindingComponent } from './component/class-binding/class-binding.component';
+import { EventBindingComponent } from './component/event-binding/event-binding.component';
 
 @NgModule({
   declarations: [
@@ -38,13 +39,14 @@ import { ClassBindingComponent } from './component/class-binding/class-binding.c
     NgForPropertiesComponent,
     NgForTrackbyComponent,
     ShopperTemplateComponent,
-    ClassBindingComponent
+    ClassBindingComponent,
+    EventBindingComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
   providers: [],
-  bootstrap: [ClassBindingComponent]
+  bootstrap: [EventBindingComponent]
 })
 export class AppModule { }
