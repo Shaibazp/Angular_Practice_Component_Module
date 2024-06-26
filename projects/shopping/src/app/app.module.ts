@@ -20,6 +20,7 @@ import { NgForTrackbyComponent } from './component/ng-for-trackby/ng-for-trackby
 import { ShopperTemplateComponent } from './component/shopper-template/shopper-template.component';
 import { ClassBindingComponent } from './component/class-binding/class-binding.component';
 import { EventBindingComponent } from './component/event-binding/event-binding.component';
+import { EmiCalculatorComponent } from './component/emi-calculator/emi-calculator.component';
 
 @NgModule({
   declarations: [
@@ -40,13 +41,14 @@ import { EventBindingComponent } from './component/event-binding/event-binding.c
     NgForTrackbyComponent,
     ShopperTemplateComponent,
     ClassBindingComponent,
-    EventBindingComponent
+    EventBindingComponent,
+    EmiCalculatorComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
   providers: [],
-  bootstrap: [EventBindingComponent]
+  bootstrap: [EmiCalculatorComponent]
 })
 export class AppModule { }
