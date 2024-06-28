@@ -1,0 +1,18 @@
+<div class="container-fluid">
+    <header class="bg-dark text-white p-1 text-center">
+        <h2><span class="bi bi-cart3"></span>Shopping - Online</h2>
+    </header>
+    <section class="row">
+        <nav class="col-3">
+            <app-filters-data [AllCount]="AllCount" [ElectronicsCount]="ElectronicsCount" [JewelarysCount]="JewelarysCount" [MenClothsCount]="MenClothsCount" [WomenClothsCount]="WomenClothsCount" (CategoryChanged)="getCategoryName($event)" (SendClick)="getProduct($event)"></app-filters-data>
+        </nav>
+        <main class="col-9 d-flex flex-wrap overflow-auto" style="height: 650px;">
+            <div *ngFor="let itm of products" class="card m-2 p-2" style="width: 200px;">
+                <img [src]="itm.image" class="card-img-top" height="150">
+                <div class="card-header" style="height: 150px;">
+                    <p>{{itm.title}}</p>
+                </div>
+            </div>
+        </main>
+    </section>
+</div>

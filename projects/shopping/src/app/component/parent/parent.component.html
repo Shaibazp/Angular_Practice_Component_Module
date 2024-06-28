@@ -1,0 +1,5 @@
+<div class="container-fluid m-3 bg-dark text-white" style="height: 400px;">
+    <h2>Parent Container</h2><button (click)="sendClick()">Send Msg To Child</button>
+        <p>{{MsgfromChild}}</p>
+    <app-child [MSGFromParent]="msg" (childClick)="getMsgFromChild($event)"></app-child>
+</div>

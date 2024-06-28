@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <h2>BMI Calculator</h2>
+        <div class="progress">
+            <div class="progress-bar bg-dark" style="width: 510px;">
+                < 52 low Weight
+            </div>
+            <div class="progress-bar bg-primary" style="width: 510px;">
+                 53 - 72 normal Weight
+            </div>
+            <div class="progress-bar bg-dark" style="width: 510px;">
+                > 73 Over Weight
+            </div>
+        </div>
+        <div class="bi bi-triangle-fill" [ngStyle]="BMIStatus" (click)="ChangeStatus($event)">
+
+        </div>
+</div>

@@ -21,6 +21,11 @@ import { ShopperTemplateComponent } from './component/shopper-template/shopper-t
 import { ClassBindingComponent } from './component/class-binding/class-binding.component';
 import { EventBindingComponent } from './component/event-binding/event-binding.component';
 import { EmiCalculatorComponent } from './component/emi-calculator/emi-calculator.component';
+import { BMIComponent } from './component/bmi/bmi.component';
+import { ParentComponent } from './component/parent/parent.component';
+import { ChildComponent } from './component/child/child.component';
+import { ProductsDataComponent } from './component/products-data/products-data.component';
+import { FiltersDataComponent } from './component/filters-data/filters-data.component';
 
 @NgModule({
   declarations: [
@@ -42,13 +47,18 @@ import { EmiCalculatorComponent } from './component/emi-calculator/emi-calculato
     ShopperTemplateComponent,
     ClassBindingComponent,
     EventBindingComponent,
-    EmiCalculatorComponent
+    EmiCalculatorComponent,
+    BMIComponent,
+    ParentComponent,
+    ChildComponent,
+    ProductsDataComponent,
+    FiltersDataComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
   providers: [],
-  bootstrap: [EmiCalculatorComponent]
+  bootstrap: [ProductsDataComponent]
 })
 export class AppModule { }
