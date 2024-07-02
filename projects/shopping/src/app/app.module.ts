@@ -26,6 +26,13 @@ import { ParentComponent } from './component/parent/parent.component';
 import { ChildComponent } from './component/child/child.component';
 import { ProductsDataComponent } from './component/products-data/products-data.component';
 import { FiltersDataComponent } from './component/filters-data/filters-data.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialDemoComponent } from './component/material-demo/material-demo.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -52,13 +59,23 @@ import { FiltersDataComponent } from './component/filters-data/filters-data.comp
     ParentComponent,
     ChildComponent,
     ProductsDataComponent,
-    FiltersDataComponent
+    FiltersDataComponent,
+    MaterialDemoComponent
+    
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatFormFieldModule, 
+    MatInputModule, 
+    MatDatepickerModule, 
+    MatIconModule
   ],
   providers: [],
-  bootstrap: [ProductsDataComponent]
+  bootstrap: [MaterialDemoComponent]
 })
 export class AppModule { }
