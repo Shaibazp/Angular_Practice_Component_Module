@@ -16,6 +16,29 @@
     <h2>
         Hello! {{userName.value}}
     </h2>
-
-   
+    <h2>
+        Date Picker
+    </h2>
+    <mat-form-field appearance="outline">
+        <mat-label>Departure Date</mat-label>
+        <input matInput [matDatepicker]="picker" ngModel #dates="ngModel">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <h1>{{dates.value | date: 'dd/MM/yyyy'}}</h1>
+    <div>
+        <h1>Withoud Lazy Loading</h1>
+            <div class="overflow-auto" style="height: 300px;border: 1px solid black;padding: 5px;">
+                <div *ngFor="let itm of prod">
+                    <img [src]="itm.image" width="150" height="150">
+                </div>
+            </div>
+        <h1>With Lazy Loading</h1>
+        <cdk-virtual-scroll-viewport [itemSize]="100" class="overflow-auto">
+            <div *cdkVirtualFor="let itm of prod">
+                <img [src]="itm.image" width="150" height="150">
+            </div>
+        </cdk-virtual-scroll-viewport>
+    </div>
 </div>

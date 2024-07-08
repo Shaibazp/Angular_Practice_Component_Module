@@ -1,0 +1,54 @@
+<div class="container-fluid">
+    <h2>Product Details</h2>
+    <h2>
+        {{title|sentence }}
+    </h2>
+    <ol>
+        <li *ngFor="let ord of city| sorting:false">{{ord}}</li>
+    </ol>
+    <dl>
+        <dt>Name</dt>
+        <dd>{{Prod.Name | titlecase}}</dd>
+        <dt>Price</dt>
+        <dd>{{Prod.Price | currency:'INR'}}</dd>
+        <dt>Date</dt>
+        <dd>{{Prod.Mfd | date: 'shortDate'}}</dd>
+        <dt>Rate</dt>
+        <dd>{{Prod.Rate | percent:'2.2'}}</dd>
+        <pre>
+            {{Prod | json}}
+        </pre>
+        <ol class="list-unstyled">
+            <li *ngFor="let itm of category| keyvalue">{{itm.key}}-{{itm.value}}</li>
+        </ol>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Delivery Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let prods of PRODucts">
+                    <td>{{prods.Name}}</td>
+                    <td>{{prods.ShippedTo}}</td>
+                    <td>{{prods.ShippedTo | i18nSelect:status}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="mb-3">
+            <input type="text" [(ngModel)]="Message">
+            <button class="btn btn-primary" (click)="addMsg()"><span class="bi bi-send"></span></button>
+        </div>
+        <button class="btn btn-primary position-relative w-25" (click)="showMSGS()">
+            <span class="bi bi-bell">{{MSG.length|i18nPlural:NotificationsMap}}</span>
+            <span class="badge bg-dark position-absolute rounded rounded-circle">{{cnt}}</span>
+        </button>
+        <div class="mt-4" *ngIf="showMsg">
+            <ul class="list-unstyled">
+                <li *ngFor="let itm of MSG">{{itm}} </li>
+            </ul>
+        </div>
+    </dl>
+</div>

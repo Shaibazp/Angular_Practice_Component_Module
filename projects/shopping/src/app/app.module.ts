@@ -30,10 +30,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialDemoComponent } from './component/material-demo/material-demo.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-
+import { MatNativeDateModule } from '@angular/material/core';
+import { CdkVirtualScrollViewport, ScrollingModule} from '@angular/cdk/scrolling';
+import { PipeDemoComponent } from './component/pipe-demo/pipe-demo.component';
+import { sentences } from './pipes/sentences.pipe';
+import { sorting } from './pipes/sorting.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +63,10 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     ChildComponent,
     ProductsDataComponent,
     FiltersDataComponent,
-    MaterialDemoComponent
+    MaterialDemoComponent,
+    PipeDemoComponent,
+    sentences,
+    sorting
     
   ],
   imports: [
@@ -72,10 +78,12 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatDatepickerModule,
     MatFormFieldModule, 
     MatInputModule, 
-    MatDatepickerModule, 
-    MatIconModule
+    MatIconModule,
+    MatNativeDateModule,
+    CdkVirtualScrollViewport,
+    ScrollingModule
   ],
-  providers: [],
-  bootstrap: [MaterialDemoComponent]
+  providers: [ MatDatepickerModule ],
+  bootstrap: [PipeDemoComponent]
 })
 export class AppModule { }
