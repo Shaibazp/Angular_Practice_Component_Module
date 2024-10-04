@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <header class="mt-2 text-white p-2 bg-dark d-flex justify-content-between">
+        <div>
+            <h2>Shopper.</h2>
+        </div>
+        <div class="nav" *ngFor="let menu of menuList" routerLinkActive="Active">
+            <a [routerLink]='menu.url'>{{menu.menu_name}}</a>
+            <!-- <a routerLink="mens">Men's Fashion</a>
+            <a routerLink="womens">Women's Fashion</a>
+            <a routerLink="electronics">Electronics</a>
+            <a routerLink="jewelery">Jewelery</a>
+            <a routerLink="admin">Admin Portal</a> -->
+        </div>
+        <div>
+            <span class="bi bi-heart me-2"></span>
+            <span class="bi bi-person me-2 "></span>
+            <span class="bi bi-search me-2"></span>
+        </div>
+    </header>
+    <section class="mt-3">
+        <router-outlet></router-outlet>
+    </section>
+</div>

@@ -1,0 +1,21 @@
+.invalid-style
+{
+    background-color: rgb(165, 109, 109);
+}
+.valid-style
+{
+    background-color: rgb(133, 201, 133);
+}
+input.ng-invalid
+{
+    border: 1px solid red;
+}
+input.ng-valid
+{
+    border: 1px solid green;
+}
+form.ng-invalid
+{
+    background-color:  rgb(232, 58, 58);
+}
+

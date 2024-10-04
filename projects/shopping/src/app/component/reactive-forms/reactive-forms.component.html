@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <h2>Reactive Form</h2>
+    <form [formGroup]="frmRegister" (submit)="SubmitClick(frmRegister.value)">
+        <dl>
+            <dt>Name</dt>
+            <dd><input type="text" formControlName="Name"></dd>
+            <dt>Price</dt>
+            <dd><input type="number" formControlName="Price"></dd>
+        </dl>
+        <div formGroupName="frmVendor">
+                <h3>Vendor Details</h3>
+                <dl>
+                    <dt>Vendor Name</dt>
+                    <dd><input type="text" formControlName="VendorName"></dd>
+                    <dt>Vendor Rating</dt>
+                    <dd><input type="text" formControlName="VendorRating"></dd>
+                </dl>
+                <button>Save</button>
+        </div>
+        <div>
+            <h3>Upload Photos</h3>
+            <button class="btn btn-link" (click)="addMoreClick()">Add More</button>
+            <div class="mt-2 mb-2" *ngFor="let itm of Photos.controls;let i=index">
+                <span class="btn btn-primary"><input type="file" formControlName="i" ></span>
+                <button class="btn btn-danger" (click)="RemoveClick(i)"><span class="bi bi-trash"></span></button>
+            </div>
+        </div>
+        <button>Submit</button>
+        <button (click)="updateClick()">Update</button>
+    </form>
+</div>

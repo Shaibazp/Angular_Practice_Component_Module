@@ -9,7 +9,7 @@ import { NetflixHeaderComponent } from './component/Netflix/netflix-header/netfl
 import { NetflixMainComponent } from './component/Netflix/netflix-main/netflix-main.component';
 import { NetflixRegisterComponent } from './component/Netflix/netflix-register/netflix-register.component';
 import { DataBindingComponent } from './component/data-binding/data-binding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FakestoreComponent } from './component/fakestore/fakestore.component';
 import { ContentProjectionComponent } from './component/content-projection/content-projection.component';
 import { MobilesDetailsComponent } from './component/mobiles-details/mobiles-details.component';
@@ -37,6 +37,12 @@ import { CdkVirtualScrollViewport, ScrollingModule} from '@angular/cdk/scrolling
 import { PipeDemoComponent } from './component/pipe-demo/pipe-demo.component';
 import { sentences } from './pipes/sentences.pipe';
 import { sorting } from './pipes/sorting.pipe';
+import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { ServiceDemoComponent } from './component/service-demo/service-demo.component';
+import { TemplateFormComponent } from './component/template-form/template-form.component';
+import { ReactiveFormsComponent } from './component/reactive-forms/reactive-forms.component';
+import { ReactiveValidationComponent } from './component/reactive-validation/reactive-validation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,7 +72,11 @@ import { sorting } from './pipes/sorting.pipe';
     MaterialDemoComponent,
     PipeDemoComponent,
     sentences,
-    sorting
+    sorting,
+    ServiceDemoComponent,
+    TemplateFormComponent,
+    ReactiveFormsComponent,
+    ReactiveValidationComponent
     
   ],
   imports: [
@@ -81,9 +91,12 @@ import { sorting } from './pipes/sorting.pipe';
     MatIconModule,
     MatNativeDateModule,
     CdkVirtualScrollViewport,
-    ScrollingModule
+    ScrollingModule,
+    HttpClientModule,
+    ReactiveFormsModule
+
   ],
   providers: [ MatDatepickerModule ],
-  bootstrap: [PipeDemoComponent]
+  bootstrap: [ReactiveValidationComponent]
 })
 export class AppModule { }

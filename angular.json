@@ -95,6 +95,97 @@
           }
         }
       }
+    },
+    "Amazon": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/amazon",
+      "sourceRoot": "projects/amazon/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/amazon",
+            "index": "projects/amazon/src/index.html",
+            "main": "projects/amazon/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/amazon/tsconfig.app.json",
+            "assets": [
+              "projects/amazon/src/favicon.ico",
+              "projects/amazon/src/assets"
+            ],
+            "styles": [
+              "projects/amazon/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "Amazon:build:production"
+            },
+            "development": {
+              "browserTarget": "Amazon:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "Amazon:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/amazon/tsconfig.spec.json",
+            "assets": [
+              "projects/amazon/src/favicon.ico",
+              "projects/amazon/src/assets"
+            ],
+            "styles": [
+              "projects/amazon/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
     }
   },
   "cli": {

@@ -1,0 +1,10 @@
+<div class="container-fluid">
+    <div class="d-flex flex-wrap">
+        <div *ngFor="let itm of products" class="m-3">
+            <img [src]="itm.image" width="100" height="100">
+            <p>
+                <a routerLink="/detailss/{{itm.id}}" class="btn btn-primary">Details</a>
+            </p>
+        </div>
+    </div>
+</div>

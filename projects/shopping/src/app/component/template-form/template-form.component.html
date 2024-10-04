@@ -1,0 +1,102 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            <form #frmRegister="ngForm" class="p-2" [ngClass]="{'valid-style':frmRegister.valid, 'invalid-style':frmRegister.invalid}" (submit)="SubmitClick(frmRegister.value)">
+                <h2>Register User</h2>
+                <dl>
+                    <dt>USer Name</dt>
+                    <dd><input type="text"  required minlength="4" maxlength="10" name="userName" ngModel #userName="ngModel"></dd>
+                    <dt>Age</dt>
+                    <dd><input type="number" required ngModel name="age" #age="ngModel"></dd>
+                    <dt>City</dt>
+                    <dd>
+                        <select name="city" ngModel #city="ngModel" >
+                            <option value="-1">Delhi</option>
+                            <option value="Hyd">Hyd</option>
+                            <option value="Mum">Mum</option>
+                        </select>
+                    </dd>
+                </dl>
+                <button [disabled]="frmRegister.invalid">Send</button>
+                <button *ngIf="frmRegister.dirty">Save Draft</button>
+            </form>
+            <hr>
+            Pristin :   {{frmRegister.pristine}}
+            Dirty :   {{frmRegister.dirty}}
+            Valid :   {{frmRegister.valid}}
+            Invalid :   {{frmRegister.invalid}}
+            Submitted :   {{frmRegister.submitted}}
+            <dl>
+                <dt>User Name</dt>
+                <dd>{{userName.value}}</dd>
+                <dt>User Age</dt>
+                <dd>{{age.value}}</dd>
+                <dt>User City Name</dt>
+                <dd>{{city.value}}</dd>
+            </dl>
+        </div>
+        <div class="col-4">
+            <form #frmRegisters="ngForm" class="p-2"  (submit)="SubmitClick(frmRegisters.value)">
+                <h2>Register User</h2>
+                <dl>
+                    <dt>USer Name</dt>
+                    <dd><input type="text"  required minlength="4" name="userName" ngModel #userNames="ngModel"></dd>
+                    <dd class="text-danger" *ngIf="(frmRegisters.submitted && userNames.invalid) || (userNames.touched && userNames.invalid) ">User Name Required</dd>
+                    <dt>Age</dt>
+                    <dd><input type="number" required ngModel name="age" #ages="ngModel"></dd>
+                    <dd class="text-danger" *ngIf="(frmRegisters.submitted && ages.invalid) || (ages.touched && ages.invalid) ">Age Required</dd>
+                    <dt>City</dt>
+                    <dd>
+                        <select name="city" ngModel #city="ngModel">
+                            <option>Delhi</option>
+                            <option>Hyd</option>
+                            <option>Mum</option>
+                        </select>
+                    </dd>
+                </dl>
+                <button >Send</button>
+                <button *ngIf="frmRegisters.dirty">Save Draft</button>
+            </form>
+        </div>
+        <div class="col-6">
+            <form #frmRegisterss="ngForm" class="p-2"  (submit)="SubmitClick(frmRegisterss.value)">
+                <h2>Register User</h2>
+                <dl>
+                    <dt>USer Name</dt>
+                    <dd><input type="text"  required minlength="4" maxlength="10" name="userNamess" ngModel #userNamess="ngModel"></dd>
+                    <dd class="text-danger" *ngIf="(frmRegisterss.submitted && userNamess.invalid)">
+                        <div *ngIf="userNamess.errors?.['required']">User Name Required</div>
+                        <div *ngIf="userNamess.errors?.['minlength']">USer Name Too Short Min 4 Chars Required</div>
+                        <div *ngIf="userNamess.errors?.['maxlength']">User Name too Long Max 10 Chars Required</div>
+                    </dd>
+                    <dt>Password</dt>
+                    <dd><input type="password"  ngModel #passwords="ngModel" name="passwords" required pattern="(?=.*[A-Z])\w{4,10}"></dd>
+                    <dd class="text-danger" *ngIf="(frmRegisterss.submitted && passwords.invalid) || (passwords.invalid && passwords.touched)">
+                        <div *ngIf="passwords.errors?.['required']">Password Required</div>
+                        <div *ngIf="passwords.errors?.['pattern']">Password 4 To 15 Char </div>
+                    </dd>
+                    <dt>Mobile</dt>
+                    <dd><input type="text" required pattern="\+91\d{10}" name="mobiless" ngModel #mobiless="ngModel"></dd>
+                    <dd class="text-danger" *ngIf="(frmRegisterss.submitted && mobiless.invalid)">
+                        <div *ngIf="mobiless.errors?.['required']">Mobile Required</div>
+                        <div *ngIf="mobiless.errors?.['pattern']">Invalid Mobile +91 & 10 Digits</div>
+                    </dd>
+                    <dt>City</dt>
+                    <dd>
+                        <select name="citys" ngModel #citys="ngModel" name="citys" (change)="cityChanged($event)">
+                            <option value="-1">Select Your City</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Hyd">Hyd</option>
+                            <option value="Mum">Mum</option>
+                        </select>
+                    </dd>
+                    <dd class="text-danger" >
+                        {{cityError}}
+                    </dd>
+                </dl>
+                <button >Send</button>
+                <button *ngIf="frmRegisterss.dirty">Save Draft</button>
+            </form>
+        </div>
+    </div>
+</div>

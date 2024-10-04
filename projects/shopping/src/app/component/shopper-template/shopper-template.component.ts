@@ -1,5 +1,6 @@
 import { Attribute, Component, OnInit } from '@angular/core';
 import { FakestoreProductContract } from '../../contracts/FakestoreProductContract';
+import { fakestore } from '../../service/fakestore.service';
 
 @Component({
   selector: 'app-shopper-template',
@@ -14,20 +15,22 @@ export class ShopperTemplateComponent implements OnInit
   public cartItemsCount:number = 0;
   public cartVisible:boolean = false;
   public totals:number = 0;
-  constructor(){}
+  constructor(private fakestores:fakestore){}
   ngOnInit(): void 
   {
       this.loadCategories();
-      this.loadProducts(`https://fakestoreapi.com/products`);
+      // this.loadProducts(`https://fakestoreapi.com/products`);
+      this.fakestores.getProducts().subscribe(resp => this.Products = resp);
   }
 
   public loadCategories():void
   {
-      fetch(`https://fakestoreapi.com/products/categories`)
-      .then(resp => resp.json())
-      .then(resp =>{ 
-        resp.unshift("all");
-        this.categories = resp;})
+      // fetch(`https://fakestoreapi.com/products/categories`)
+      // .then(resp => resp.json())
+      // .then(resp =>{ 
+      //   resp.unshift("all");
+      //   this.categories = resp;})
+      this.fakestores.getCategories().subscribe(resp => this.categories = resp);
   }
 
   public loadProducts(url:string):void
